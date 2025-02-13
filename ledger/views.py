@@ -135,5 +135,3 @@ def recipe2(request):
     }
 
     return render(request, 'recipe.html', ctx)
-
-# Create your views here.
