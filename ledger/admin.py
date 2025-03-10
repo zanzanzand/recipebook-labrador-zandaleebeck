@@ -12,9 +12,4 @@ class RecipeAdmin(admin.ModelAdmin):
     inlines = [RecipeIngredientInline]
 
 
-class ProfileInline(admin.StackedInline):
-    model = Profile
-    can_delete = False
-
-
 admin.site.register(Recipe, RecipeAdmin)
