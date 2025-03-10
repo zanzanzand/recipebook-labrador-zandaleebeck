@@ -11,7 +11,6 @@
     <body>
         <header>
             <h1><a href = '/recipes/list'>Recipe Book</a></h1>
-        </header>
         {% if request.user.is_authenticated %}
             <form action="{% url 'logout' %}" method="post">
                 {% csrf_token %}
@@ -22,6 +21,7 @@
                 <a href= "{% url 'login' %}"">Login</a>
             {% endif %}
         {% endif %}
+        </header>
         <main>
             {% block content %}
             {% endblock %}
