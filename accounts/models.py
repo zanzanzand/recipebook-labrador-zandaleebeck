@@ -8,6 +8,7 @@ class Profile(models.Model):
     name = models.CharField(max_length=50)
     bio = models.TextField(
         validators=[
-            MinLengthValidator(256, "Bio is too short. It must be at least 256 characters.")
+            MinLengthValidator(256, "Bio is too short. "
+                               "It must be at least 256 characters.")
         ]
-    ) 
+    )
