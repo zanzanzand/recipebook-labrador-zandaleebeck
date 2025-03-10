@@ -1,5 +1,5 @@
-{% extends base.html %}
-{% block title %} Login {% end block %}
+{% extends "base.html" %}
+{% block title %} Login {% endblock %}
 {% block content %}
     <h2>Login</h2>
     <form method="POST">
@@ -8,4 +8,4 @@
         <button type="submit">Login</button>
     </form>
     <a href="{% url 'password_reset' %}">Forgot Password</a>
-{% end block %}
+{% endblock %}

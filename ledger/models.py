@@ -1,10 +1,12 @@
 from django.db import models
 from django.urls import reverse
+from datetime import datetime
+from django.utils.timezone import now
 
 
 class Recipe(models.Model):
     name = models.CharField(max_length=120)
-    author = models.CharField(max_length=120)
+    author = models.CharField(max_length=120, default="")
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
 
