@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Add Image to Recipe{% endblock %}
+{% block content %}
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Submit</button>
+    </form>
+    <h3>
+        <a href="{% url 'ledger:recipe' pk=view.kwargs.pk %}">Return</a>
+    </h3>
+{% endblock %}

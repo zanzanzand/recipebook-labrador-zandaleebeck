@@ -8,5 +8,11 @@
             <li>{{ ingredient.ingredient.name }} - {{ ingredient.quantity }}</li>
         {% endfor %}
     </ul>
+    {% for image in recipe.image.all %}
+        <img src="{{ image.image.url }}" alt="{{ image.description }}">
+    {% endfor %}
     <a href="/recipes/list">Recipes List</a>
+    <h4>
+        <a href="{% url 'ledger:recipe_add_image' pk=recipe.pk %}">Add Images</a>
+    </h4>
 {% endblock %}
