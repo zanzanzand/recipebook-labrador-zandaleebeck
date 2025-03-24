@@ -24,11 +24,11 @@ class RecipeImageCreateView(LoginRequiredMixin, CreateView):
 
     def get_success_url(self):
         return reverse_lazy(
-            "ledger:recipe", kwargs={"pk": self.object.recipe.pk}
+            "ledger:recipe", kwargs={'pk' : self.object.recipe.pk}
         )
 
     def form_valid(self, form):
-        form.instance.recipe = Recipe.objects.get(pk=self.kwargs["pk"])
+        form.instance.recipe = Recipe.objects.get(pk=self.kwargs['pk'])
         return super().form_valid(form)
 
 
