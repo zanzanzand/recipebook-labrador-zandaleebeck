@@ -9,6 +9,7 @@ class RecipeIngredientInline(admin.TabularInline):
 class IngredientAdmin(admin.ModelAdmin):
     model = Ingredient
 
+
 class RecipeImageInline(admin.TabularInline):
     model = RecipeImage
 

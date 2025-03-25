@@ -2,11 +2,12 @@ from django.db import models
 from django.urls import reverse
 from datetime import datetime
 from django.utils.timezone import now
+from django.contrib.auth.models import User
 
 
 class Recipe(models.Model):
     name = models.CharField(max_length=120)
-    author = models.CharField(max_length=120, default="")
+    author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
 
@@ -43,4 +44,4 @@ class RecipeIngredient(models.Model):
 class RecipeImage(models.Model):
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE, related_name="image")
     description = models.TextField(max_length=255)
-    image = models.ImageField(upload_to="images/", null= False)
+    image = models.ImageField(upload_to="images/", null=False)

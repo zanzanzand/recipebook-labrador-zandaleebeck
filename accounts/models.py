@@ -12,3 +12,6 @@ class Profile(models.Model):
                                "It must be at least 256 characters.")
         ]
     )
+
+    def __str__(self):
+        return self.user.username
