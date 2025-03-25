@@ -4,10 +4,10 @@
 {% block content %}
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form }}
-        <button type="submit">Submit</button>
+        {{ form.as_p }}
+        <button type="submit">Add Image</button>
     </form>
     <h3>
-        <a href="{% url 'ledger:recipe' pk=view.kwargs.pk %}">Return</a>
+        <a href="{% url 'ledger:recipe_detail' recipe.pk %}">Return</a>
     </h3>
 {% endblock %}
